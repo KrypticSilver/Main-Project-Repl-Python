@@ -1,12 +1,9 @@
 import time
-from replit import audio
 
-def play_note(note, duration):
-    note_to_freq = {
-        "C": 262, "D": 294, "E": 330, "F": 349, "G": 392, "A": 440
-    }
-    audio.play_tone(duration, note_to_freq[note], 0)
-    time.sleep(duration)
+count = 0
 
-play_note("C", 2)
-
+while True:
+  count += 1
+  time.sleep(1)
+  
+  print("hello world" + str(count), end='/r')

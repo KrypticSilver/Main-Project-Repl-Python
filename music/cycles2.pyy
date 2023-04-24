@@ -1,0 +1,29 @@
+import time
+from replit import audio
+
+def play_note(note, duration):
+    note_to_freq = {
+        "C": 262, "D": 294, "E": 330, "F": 349, "G": 392, "A": 440
+    }
+    audio.play_tone(duration, note_to_freq[note], 0)
+    time.sleep(duration)
+
+play_note("C", 2)
+
+def play_cycle(interval, interval_reps, increment, cycles):
+  duration = 3
+  starting_tone = 262
+  
+  for cycle in range(cycles):
+    current_tone = starting_tone
+    
+    for rep in range(interval_reps):
+      audio.play_tone(duration, current_tone, 0)
+      current_tone += interval
+
+    starting_tone += increment
+
+
+play_cycle(8, 8, 2, 20)
+    
+
